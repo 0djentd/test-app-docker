@@ -2,7 +2,6 @@
   <v-sheet rounded="lg" elevation="2">
     <v-data-table
       :loading="!comments"
-      :search="search"
       :headers="headers"
       :items="comments"
       :items-per-page="3"
@@ -40,7 +39,7 @@ export default {
     },
   },
   mounted() {
-    this.$store.comments.commit("getComments");
+    this.$store.commit("getComments");
   },
 };
 </script>

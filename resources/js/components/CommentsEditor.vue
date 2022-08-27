@@ -1,5 +1,5 @@
 <template>
-  <v-card rounded="lg" elevation="2">
+  <v-card v-if="newComment" rounded="lg" elevation="2">
     <v-form>
       <v-container>
         <v-row>
@@ -61,7 +61,8 @@ export default {
         this.newComment = {...this.newEmptyComment};
     },
     post() {
-        this.$store.comments.commit("post", this.newComment);
+        this.$store.commit("postComment", this.newComment);
+        this.clear();
     },
   },
   mounted() {
