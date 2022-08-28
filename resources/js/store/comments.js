@@ -48,7 +48,7 @@ export default {
                 .then((res) => res.data)
                 .catch((err) => {console.error(err); return null})
             if (newComment) {
-                state.comments.push(comment);
+                state.comments.push(newComment);
             }
         },
     },
