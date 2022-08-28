@@ -18,3 +18,13 @@ export default {
   components: { CommentsList, CommentsEditor }
 };
 </script>
+
+<style>
+.v-sheet {
+padding: 20px;
+margin: 20px 0;
+}
+.v-btn {
+margin: 0 4px;
+}
+</style>
