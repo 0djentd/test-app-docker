@@ -1,5 +1,5 @@
 <template>
-  <v-card v-if="newComment" rounded="lg" elevation="2">
+  <v-sheet v-if="newComment" rounded="lg" elevation="2">
     <v-form>
       <v-container>
         <v-row>
@@ -24,7 +24,9 @@
           </v-col>
 
           <v-col cols="12" md="4">
+            <v-label for="datepicker">Date</v-label>
             <date-picker
+              id="datepicker"
               v-model="newComment.date"
               type="datetime"
             ></date-picker>
@@ -36,11 +38,12 @@
         </v-row>
       </v-container>
     </v-form>
-  </v-card>
+  </v-sheet>
 </template>
 
 <script>
 import DatePicker from "vue2-datepicker";
+import "vue2-datepicker/index.css";
 export default {
   data() {
     return {
