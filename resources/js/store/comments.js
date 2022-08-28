@@ -19,9 +19,9 @@ export default {
                 });
             state.comments = await comments;
         },
-        async deleteComment(state, comment_id) {
+        async deleteComment(state, comment) {
             const removed = axios({
-                url: `${api_url}comments/${comment_id}/`,
+                url: `${api_url}comments/${comment.id}/`,
                 method: "DELETE",
             })
                 .then((res) => true)
@@ -32,12 +32,8 @@ export default {
             if (!removed) {
                 return;
             }
-            for (comment in state.comments) {
-                if (comment.id == comment_id) {
-                    state.comments.remove(comment);
-                    break;
-                }
-            }
+            const index = state.comments.indexOf(comment);
+            state.comments.splice(index, 1);
         },
         async postComment(state, comment) {
             const newComment = await axios({

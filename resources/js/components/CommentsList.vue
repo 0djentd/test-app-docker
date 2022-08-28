@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     deleteComment(comment) {
-      this.$store.commit("deleteComment", comment.id);
+      this.$store.commit("deleteComment", comment);
     },
   },
   mounted() {
