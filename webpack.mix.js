@@ -11,7 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 let url = process.env.APP_URL.replace(/(^\w+:|^)\/\//, '');
-mix.js('resources/js/app.js', 'public/js').vue()
+mix.js('resources/js/main.js', 'public/js').vue()
     .postCss('resources/css/app.css', 'public/css', [
         //
     ]);
